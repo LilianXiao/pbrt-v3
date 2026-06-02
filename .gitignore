@@ -3,3 +3,48 @@ src/build
 src/bin
 src/objs
 .sconsign.dblite
+
+# CMake Build and Configuration Files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+Testing/
+DartConfiguration.tcl
+pbrt.sln
+pbrt.vcxproj
+pbrt.vcxproj.filters
+pbrt.vcxproj.user
+ALL_BUILD.vcxproj
+RUN_TESTS.vcxproj
+ZERO_CHECK.vcxproj
+
+# Executables
+pbrt
+bsdftool
+cyhair2pbrt
+exrtoc
+obj2pbrt
+imgtool
+pbrt_test
+
+# Output Folders & Logs
+build/
+bin/
+
+# IDE / Editor Files
+.vscode/
+.idea/
+*.suo
+*.user
+*.ncb
+*.sdf
+*.suo
+*.xcodeproj/
+*.xcworkspace/
+
+# OS Specific Files
+.DS_Store
+Thumbs.db

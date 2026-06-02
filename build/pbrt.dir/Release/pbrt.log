@@ -1,4 +1,21 @@
-﻿  Building Custom Rule C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/CMakeLists.txt
+﻿  bvh.cpp
+C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging.h(713,1): warning C4018: '<=': signed/unsigned mismatch
+  (compiling source file '../src/accelerators/bvh.cpp')
+      C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging.h(713,1):
+      the template instantiation context (the oldest one first) is
+          C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\accelerators\bvh.cpp(108,5):
+          see reference to function template instantiation 'std::string *google::Check_LEImpl<unsigned int,int>(const T1 &,const T2 &,const char *)' being compiled
+          with
+          [
+              T1=unsigned int,
+              T2=int
+          ]
+  
+  kdtreeaccel.cpp
+  environment.cpp
+  orthographic.cpp
+  perspective.cpp
+  realistic.cpp
   api.cpp
 C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging.h(714,1): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '../../../../../../src/core/api.cpp')
@@ -14,25 +31,20 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
   
   bssrdf.cpp
   camera.cpp
-  efloat.cpp
   error.cpp
-  fileutil.cpp
   film.cpp
   filter.cpp
-  floatfile.cpp
   geometry.cpp
   imageio.cpp
   integrator.cpp
   interaction.cpp
-  interpolation.cpp
   light.cpp
   lightdistrib.cpp
   lowdiscrepancy.cpp
   material.cpp
-  medium.cpp
-  memory.cpp
   Generating Code...
   Compiling...
+  medium.cpp
   microfacet.cpp
   parallel.cpp
   paramset.cpp
@@ -45,48 +57,15 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
   sampling.cpp
   scene.cpp
   shape.cpp
-  sobolmatrices.cpp
-  spectrum.cpp
   stats.cpp
   texture.cpp
   transform.cpp
-  bvh.cpp
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging.h(713,1): warning C4018: '<=': signed/unsigned mismatch
-  (compiling source file '../../../../../../src/accelerators/bvh.cpp')
-      C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging.h(713,1):
-      the template instantiation context (the oldest one first) is
-          C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\accelerators\bvh.cpp(108,5):
-          see reference to function template instantiation 'std::string *google::Check_LEImpl<unsigned int,int>(const T1 &,const T2 &,const char *)' being compiled
-          with
-          [
-              T1=unsigned int,
-              T2=int
-          ]
-  
-  kdtreeaccel.cpp
-  environment.cpp
-  Generating Code...
-  Compiling...
-  orthographic.cpp
-  perspective.cpp
-  realistic.cpp
-  lodepng.cpp
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(798,10): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(1458,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(1462,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(1534,32): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(3478,25): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(3492,53): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(4326,26): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(4374,26): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(4454,26): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(5397,27): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  rply.cpp
-  targa.cpp
   box.cpp
   gaussian.cpp
   mitchell.cpp
   sinc.cpp
+  Generating Code...
+  Compiling...
   ao.cpp
   bdpt.cpp
   directlighting.cpp
@@ -97,8 +76,6 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\lodepng.cpp(5397,27): w
   whitted.cpp
   diffuse.cpp
   distant.cpp
-  Generating Code...
-  Compiling...
   goniometric.cpp
   infinite.cpp
   point.cpp
@@ -121,6 +98,8 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
           ]
   
   kdsubsurface.cpp
+  Generating Code...
+  Compiling...
   matte.cpp
   metal.cpp
   mirror.cpp
@@ -131,8 +110,6 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
   translucent.cpp
   uber.cpp
   grid.cpp
-  Generating Code...
-  Compiling...
   homogeneous.cpp
   halton.cpp
   maxmin.cpp
@@ -143,6 +120,8 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
   cone.cpp
   curve.cpp
   cylinder.cpp
+  Generating Code...
+  Compiling...
   disk.cpp
   heightfield.cpp
   hyperboloid.cpp
@@ -153,8 +132,6 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
   sphere.cpp
   bilerp.cpp
   checkerboard.cpp
-  Generating Code...
-  Compiling...
   constant.cpp
   dots.cpp
   fbm.cpp
@@ -165,10 +142,10 @@ C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\src\ext\glog\glog\logging
   scale.cpp
   uv.cpp
   windy.cpp
+  Generating Code...
+  Compiling...
   wrinkled.cpp
   Generating Code...
-  ArHosekSkyModel.c
-C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\src\ext\ArHosekSkyModel.c(529,40): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   triangle.cpp
   triangle.cpp
   pbrt.vcxproj -> C:\Users\lilia\OneDrive\Documents\GitHub\pbrt-v3\build\Release\libpbrt.lib
