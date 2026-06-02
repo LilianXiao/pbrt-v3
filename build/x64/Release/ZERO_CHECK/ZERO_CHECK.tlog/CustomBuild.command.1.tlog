@@ -1,0 +1,10 @@
+^C:\USERS\LILIA\ONEDRIVE\DOCUMENTS\GITHUB\PBRT-V3\BUILD\CMAKEFILES\DD58EBE63B8A369A3F351532F5C56510\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3 -BC:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/PBRT-V3.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

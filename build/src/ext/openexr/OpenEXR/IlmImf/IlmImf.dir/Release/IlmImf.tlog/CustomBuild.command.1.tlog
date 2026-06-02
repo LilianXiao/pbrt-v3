@@ -1,0 +1,30 @@
+^C:\USERS\LILIA\ONEDRIVE\DOCUMENTS\GITHUB\PBRT-V3\BUILD\CMAKEFILES\7DD7E6019584EA9DF8F42664594A9140\B44EXPLOGTABLE.H.RULE
+setlocal
+Release\b44ExpLogTable > C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/b44ExpLogTable.h
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LILIA\ONEDRIVE\DOCUMENTS\GITHUB\PBRT-V3\BUILD\CMAKEFILES\7DD7E6019584EA9DF8F42664594A9140\DWALOOKUPS.H.RULE
+setlocal
+Release\dwaLookups > C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/dwaLookups.h
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LILIA\ONEDRIVE\DOCUMENTS\GITHUB\PBRT-V3\SRC\EXT\OPENEXR\OPENEXR\ILMIMF\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3 -BC:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build --check-stamp-file C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

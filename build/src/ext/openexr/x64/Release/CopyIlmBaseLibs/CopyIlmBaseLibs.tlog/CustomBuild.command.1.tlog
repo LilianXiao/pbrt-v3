@@ -1,0 +1,26 @@
+^C:\USERS\LILIA\ONEDRIVE\DOCUMENTS\GITHUB\PBRT-V3\BUILD\CMAKEFILES\053BEDF7699C41F810DC448EC038742E\COPYILMBASELIBS.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/IlmBase/Half/ C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/IlmBase/IlmThread/ C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/IlmBase/Iex/ C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/IlmBase/Imath/ C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/OpenEXR/IlmImf/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LILIA\ONEDRIVE\DOCUMENTS\GITHUB\PBRT-V3\SRC\EXT\OPENEXR\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3 -BC:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build --check-stamp-file C:/Users/lilia/OneDrive/Documents/GitHub/pbrt-v3/build/src/ext/openexr/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
