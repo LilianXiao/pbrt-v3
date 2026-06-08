@@ -311,6 +311,29 @@ class FresnelNoOp : public Fresnel {
     std::string ToString() const { return "[ FresnelNoOp ]"; }
 };
 
+// Custom class that follows Stam's diffraction model
+class Diffraction : public BxDF {
+  public:
+    Diffraction(const Spectrum &R, Float roughness, Float gratingSpacing)
+        : BxDF(BxDFType(BSDF_REFLECTION | BSDF_GLOSSY)), 
+          R(R), 
+          alpha(roughness), 
+          d(gratingSpacing) {}
+    Spectrum f(const Vector3f &wo, const Vector3f &wi) const override;
+
+    Spectrum f(const Vector3f &wo, const Vector3f &wi) const {
+        return Spectrum(0.f);
+    }
+    Spectrum Sample_f(const Vector3f &wo, Vector3f *wi, const Point2f &sample,
+                      Float *pdf, BxDFType *sampledType) const;
+    Float Pdf(const Vector3f &wo, const Vector3f &wi) const { return 0; }
+
+  private:
+    const Spectrum R;
+    const Float alpha;
+    const Float d;
+};
+
 class SpecularReflection : public BxDF {
   public:
     // SpecularReflection Public Methods
