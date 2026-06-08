@@ -44,6 +44,9 @@
 namespace pbrt {
 
 // BxDF Utility Functions
+Float fract(Float x) { return x - std::floor(x); }
+
+
 Float FrDielectric(Float cosThetaI, Float etaI, Float etaT) {
     cosThetaI = Clamp(cosThetaI, -1, 1);
     // Potentially swap indices of refraction
@@ -222,6 +225,99 @@ std::string OrenNayar::ToString() const {
     return std::string("[ OrenNayar R: ") + R.ToString() +
            StringPrintf(" A: %f B: %f ]", A, B);
 }
+
+// Diffraction implementation
+// for direct lighting sampling
+Spectrum Diffraction::f(const Vector3f &wo, const Vector3f &wi) const {
+    if (!SameHemisphere(wo, wi)) {
+        return Spectrum(0.f);
+    }
+
+    Vector3f wh = Normalize(wo + wi);
+
+    // rainbow map
+    auto rainbowMap = [](Float y) -> Spectrum {
+        auto blend3 = [](Float x) -> Float {
+            float val = 1.f - x * x;
+            val = std::max(0.f, val);
+            return static_cast<Float>(val);
+        };
+        Float r = blend3(4.f * (y - 0.75f));
+        Float g = blend3(4.f * (y - 0.5f));
+        Float b = blend3(4.f * (y - 0.25f));
+        Float rgb[3] = {r, g, b};
+        return RGBSpectrum::FromRGB(rgb);
+    };
+
+    // since in local space tangent T is (1, 0, 0)
+    // then dot(tangent, half vec) is x component of half vec
+    Float u = std::abs(wh.x) * d;
+    Spectrum cdiff(0.f);
+    for (int n = 1; n < 8; ++n) {
+        Float y = 4.f * u / static_cast<Float>(n) - 1.f;
+        cdiff += rainbowMap(y) / static_cast<Float>(n);
+    }
+
+    // anisotropic hilite
+    float w = std::max(static_cast<float>(wh.z), 0.05f);
+    w = static_cast<Float>(w);
+    Float e = alpha * u / w;
+    Spectrum anis = R * std::exp(-e * e);
+    return (cdiff * R + anis);
+}
+// for indirect light sampling/environment map sampling
+Spectrum Diffraction::Sample_f(const Vector3f &wo, Vector3f *wi,
+                               const Point2f &sample, Float *pdf,
+                               BxDFType *sampledType) const {
+    // The diffraction sample_f is very similar to the microfacet impl,
+    // but uses tangents along the grating bands for physically based effects
+    if (wo.z == 0.f) {
+        return Spectrum(0.f);
+    }
+
+    // diffraction order m: [-2, -1, 0, 1, 2]
+    int order = 2;
+    int numOrders = 2 * order + 1;
+    // sample from this range of orders
+    int m = std::floor(sample[0] * numOrders) - order;
+    float orderPb = 1.f / numOrders;
+
+    // microfacet reflection normal computation
+    Vector3f wh = distribution->Sample_wh(wo, Point2f(fract(sample[0] * numOrders), sample[1]));
+    // arbitrary wavelength for now
+    Float lambda = 550.f;
+    // grating eval
+    Vector3f woLoc = wo; // = projection to local microfacet space(wh, wo)
+    Vector3f wiLoc;
+    // tangent axis shift
+    wiLoc.x = -woLoc.x + (m * lambda / d);
+    Float sin2thetai = wiLoc.x * wiLoc.x + woLoc.y * woLoc.y;
+    if (sin2thetai > 1.f) {
+        return Spectrum(0.f);
+    }
+    wiLoc.z = std::sqrt(1.f - sin2thetai);
+    // turn wiLoc back to world/main
+    // *wi = to local (wh, wiLoc)
+    if (!SameHemisphere(wo, *wi)) {
+        return Spectrum(0.f);
+    }
+    // pdf
+    *pdf = distribution->Pdf(wo, wh) * orderPb; // multiply by jacobian
+    // jacobian (wo, *wi, wh, m, lambda)
+    // microfacet reflection pdf is 1/4 * (wo dot m)
+    // however diffraction pdf requires anisotropic factor
+    // i'll implement this later...
+
+
+    return Spectrum(0.f);
+}
+std::string Diffraction::ToString() const {
+    return std::string("[ Diffraction R: ") + R.ToString() +
+           "Roughness: " + std::to_string(alpha) +
+           "Grating Spacing: " + std::to_string(d) + std::string(" ]");
+}
+
+// end diffraction impls
 
 Spectrum MicrofacetReflection::f(const Vector3f &wo, const Vector3f &wi) const {
     Float cosThetaO = AbsCosTheta(wo), cosThetaI = AbsCosTheta(wi);
