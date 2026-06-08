@@ -1,12 +1,68 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\build\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77E7BC1F-DC3E-3CC6-A0F2-E1E20FAD8D56}|pbrt.vcxproj|C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\spectrum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E7BC1F-DC3E-3CC6-A0F2-E1E20FAD8D56}|pbrt.vcxproj|C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\sampling.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E7BC1F-DC3E-3CC6-A0F2-E1E20FAD8D56}|pbrt.vcxproj|C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\microfacet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "spectrum.cpp",
+              "DocumentMoniker": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\spectrum.cpp",
+              "RelativeDocumentMoniker": "..\\src\\core\\spectrum.cpp",
+              "ToolTip": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\spectrum.cpp",
+              "RelativeToolTip": "..\\src\\core\\spectrum.cpp",
+              "ViewState": "AgIAAMsEAAAAAAAAAAAAAOMEAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-04T19:05:41.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "sampling.cpp",
+              "DocumentMoniker": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\sampling.cpp",
+              "RelativeDocumentMoniker": "..\\src\\core\\sampling.cpp",
+              "ToolTip": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\sampling.cpp",
+              "RelativeToolTip": "..\\src\\core\\sampling.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-04T19:05:38.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "microfacet.cpp",
+              "DocumentMoniker": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\microfacet.cpp",
+              "RelativeDocumentMoniker": "..\\src\\core\\microfacet.cpp",
+              "ToolTip": "C:\\Users\\lilia\\OneDrive\\Documents\\GitHub\\pbrt-v3\\src\\core\\microfacet.cpp",
+              "RelativeToolTip": "..\\src\\core\\microfacet.cpp",
+              "ViewState": "AgIAACkBAAAAAAAAAAAAAD4BAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-04T17:47:45.034Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
